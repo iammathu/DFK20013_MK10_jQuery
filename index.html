@@ -1,58 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Page</title>
+<title>DFK20013 Login</title>
 
-<link rel="stylesheet" href="theme.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
+<!-- jQuery Mobile ThemeRoller -->
+<link rel="stylesheet" href="themes/my-custom-theme.min.css">
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
+
+<!-- jQuery Mobile -->
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 <script src="script.js"></script>
 
 </head>
-
 <body>
 
 <!-- PAGE 1 LOGIN -->
-<div data-role="page" id="loginPage">
+<div data-role="page" id="page1">
 
-<div data-role="header">
-<h1>Login</h1>
-</div>
+    <div data-role="header" data-theme="b">
+        <h1>Login Form</h1>
+    </div>
 
-<div data-role="main" class="ui-content">
+   <div data-role="content">
 
-<label>Username</label>
-<input type="text" id="username">
+        <form action="login.php" method="post" onsubmit="return semak()">
 
-<label>Password</label>
-<input type="password" id="password">
+            <label>Username</label>
+            <input type="text" id="username">
 
-<button id="loginBtn">Login</button>
+            <label>Password</label>
+            <input type="password" id="password">
 
-</div>
+            <button type="submit" data-theme="c">Submit</button>
+
+        </form>
+
+        <!-- POPUP -->
+        <div data-role="popup" id="popupMsg">
+
+            <div data-role="header" data-theme="b">
+                <h3>Message</h3>
+            </div>
+
+            <div role="main" class="ui-content">
+                <p>Sila isi username & password</p>
+                <a href="#" data-rel="back" class="ui-btn">OK</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div data-role="footer" data-theme="b">
+        <h4>DFK20013</h4>
+    </div>
 
 </div>
 
 
 <!-- PAGE 2 AFTER LOGIN -->
-<div data-role="page" id="infoPage">
+<div data-role="page" id="page2">
 
-<div data-role="header">
-<h1>Info Page</h1>
+    <div data-role="header" data-theme="b">
+        <h1>Info Page</h1>
+    </div>
+
+    <div data-role="content">
+
+        <h2>Login Successful</h2>
+        <a href="#page1" class="ui-btn">Logout</a>
+
+    </div>
+
+    <div data-role="footer" data-theme="b">
+        <h4>DFK20013</h4>
+    </div>
+
 </div>
 
-<div data-role="main" class="ui-content">
-
-<h2>Login Berjaya</h2>
-<p>Selamat datang ke sistem.</p>
-
-</div>
-
-</div>
 </body>
 </html>
